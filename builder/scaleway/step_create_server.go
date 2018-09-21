@@ -18,7 +18,7 @@ func (s *stepCreateServer) Run(_ context.Context, state multistep.StateBag) mult
 	client := state.Get("client").(*api.ScalewayAPI)
 	ui := state.Get("ui").(packer.Ui)
 	c := state.Get("config").(Config)
-	sshPubKey := state.Get("ssh_pubkey").(string)
+	sshPubKey := s.pubKey.(string)
 	tags := []string{}
 	var bootscript *string
 
